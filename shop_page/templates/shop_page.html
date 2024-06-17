@@ -1,0 +1,19 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SHOP PAGE</title>
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" accept="images/*" name = "image">
+            <input type="text" name = "name">
+            <button type="submit">SUBMIT</button>
+        </form>
+        {% for product in products %}
+            <img src="{{ url_for('shop.static', filename = '/images/'+ product.name + '.png') }}" alt="krytaya kartinka">
+            <h1>{{ product.name }}</h1>
+            <hr>
+        {% endfor %}
+    </body>
+</html>
